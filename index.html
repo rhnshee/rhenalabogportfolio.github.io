@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Rhena Shekka Labog - Portfolio showcasing web development and IT skills.">
+    <meta name="keywords" content="Rhena, Shekka, Labog, Portfolio, Web Developer, IT, Projects">
+    <meta name="author" content="Rhena Shekka Labog">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <title>Rhena Shekka Labog | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero scroll-animate">
+        <div class="hero-content">
+            <div class="hero-img-container">
+                <img src="images/pic.jpg" alt="Rhena Shekka Labog" class="hero-img">
+            </div>
+            <div class="hero-text">
+                <h1 class="hero-title animate">Rhena Shekka Labog</h1>
+                <hr class="divider animate">
+                <p class="hero-subtitle animate">Web Developer | IT Enthusiast | Creative Problem Solver</p>
+                <a href="#projects" class="btn animate">View Projects</a>
+            </div>
+        </div>
+    </section>
+
+
+    
+
+    <!-- About Section -->
+    <section class="about scroll-animate" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-description">
+                I am a passionate web developer who loves crafting elegant, functional, and user-friendly websites. I enjoy solving problems and continuously learning new technologies.
+            </p>
+        </div>
+    </section>
+
+    <section class="projects scroll-animate" id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Project</h2>
+
+            <div class="featured-project">
+                <div class="project-image">
+                    <img src="images/mock-up-previewed.png" alt="Hotel System Mockup">
+                </div>
+
+                <div class="project-details">
+                    <h3>Hotel and Restaurant Management System</h3>
+                    <p><strong>Focus:</strong> Housekeeping and Maintenance Module</p>
+                    <p>
+                        A custom-built management system designed to streamline housekeeping and maintenance operations in hotel and restaurant environments. This project automates task assignments, tracks room statuses, schedules maintenance, and improves overall operational efficiency.
+                    </p>
+                    <ul class="tech-stack">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>PHP</li>
+                        <li>MySQL</li>
+                        <li>Bootstrap</li>
+                    </ul>
+                    <a href="#" class="btn" target="_blank">Request Demo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Skills Section -->
+    <section class="skills scroll-animate" id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <ul class="skills-list">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Git</li>
+                <li>Responsive Design</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="contact scroll-animate" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <form class="contact-form" action="https://formspree.io/f/myzjnpgq" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn animate">Send Message</button>
+            </form>
+        </div>
+    </section>
+    
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Rhena Shekka Labog. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    
+    <script>
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.scroll-animate').forEach(section => {
+        observer.observe(section);
+    });
+    </script>
+
+
+</body>
+</html>
