@@ -6,8 +6,10 @@
     <meta name="keywords" content="Rhena, Shekka, Labog, Portfolio, Web Developer, IT, Projects">
     <meta name="author" content="Rhena Shekka Labog">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <title>Rhena Shekka Labog | Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -17,7 +19,7 @@
             <nav>
                 <a href="#about">About</a>
                 <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
+                <a href="#certifications">Certifications</a>
                 <a href="#contact">Contact</a>
             </nav>
         </div>
@@ -43,10 +45,89 @@
     <!-- About Section -->
     <section class="about scroll-animate" id="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <p class="section-description">
-                I am a passionate web developer who loves crafting elegant, functional, and user-friendly websites. I enjoy solving problems and continuously learning new technologies.
-            </p>
+            <h2 class="section-title" data-aos="fade-up">About Me</h2>
+
+            <div class="about-cards">
+            
+                <div class="about-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="lottie-wrapper">
+                        <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_1pxqjqps.json" background="transparent" speed="1" style="width: 100px; height: 100px;" loop autoplay></lottie-player>
+                    </div>
+                    <h3>Web Developer</h3>
+                    <p>Responsive and clean websites that work on every screen.</p>
+                </div>
+
+                <div class="about-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="lottie-wrapper">
+                        <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_yr6zz3wv.json" background="transparent" speed="1" style="width: 100px; height: 100px;" loop autoplay></lottie-player>
+                    </div>
+                    <h3>Creative Thinker</h3>
+                    <p>Turning ideas into sleek, functional web solutions.</p>
+                </div>
+
+                <div class="about-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="lottie-wrapper">
+                        <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_u8o7BL.json" background="transparent" speed="1" style="width: 100px; height: 100px;" loop autoplay></lottie-player>
+                    </div>
+                    <h3>Fast Learner</h3>
+                    <p>Always growing with new tools and tech.</p>
+                </div>
+
+                <div class="about-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="lottie-wrapper">
+                        <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_3rwasyjy.json" background="transparent" speed="1" style="width: 100px; height: 100px;" loop autoplay></lottie-player>
+                    </div>
+                    <h3>Team Player</h3>
+                    <p>Collaborates and communicates effectively in every project.</p>
+                </div>
+            </div>
+
+            <!-- Tools Used -->
+    <div class="tools-used mt-5" data-aos="fade-up" data-aos-delay="500">
+      <span class="tool">HTML</span>
+      <span class="tool">CSS</span>
+      <span class="tool">JavaScript</span>
+      <span class="tool">PHP</span>
+      <span class="tool">MySQL</span>
+      <span class="tool">Bootstrap</span>
+    </div>
+
+    <!-- Quote -->
+    <blockquote class="about-quote" data-aos="fade-up" data-aos-delay="550">
+      “I code to create meaningful, elegant, and human-centered digital experiences.”
+    </blockquote>
+
+    <!-- Quick Stats -->
+    <div class="quick-stats">
+        <div class="stat" data-aos="zoom-in">
+            <h3>1</h3>
+            <p>Capstone Project</p>
+        </div>
+        <div class="stat" data-aos="zoom-in" data-aos-delay="100">
+            <h3>300+</h3>
+            <p>Hours of Dev Work</p>
+        </div>
+        <div class="stat" data-aos="zoom-in" data-aos-delay="200">
+            <h3>10+</h3>
+            <p>Technologies Used</p>
+        </div>
+        <div class="stat" data-aos="zoom-in" data-aos-delay="300">
+            <h3>3</h3>
+            <p>Online Trainings</p>
+        </div>
+    </div>
+
+
+    <!-- Timeline -->
+    <div class="timeline" data-aos="fade-up" data-aos-delay="650">
+      <div class="timeline-item"><span class="year">2022</span> - Started studying IT</div>
+      <div class="timeline-item"><span class="year">2024</span> - Completed Internship</div>
+      <div class="timeline-item"><span class="year">2025</span> - Built Capstone System</div>
+    </div>
+
+            <div class="resume-btn-container" data-aos="fade-up" data-aos-delay="400">
+                <button class="btn resume-btn animate" onclick="openResume()">View Resume</button>
+            </div>
         </div>
     </section>
 
@@ -81,7 +162,7 @@
 
 
     <!-- Skills Section -->
-    <section class="skills scroll-animate" id="skills">
+    <section class="skills scroll-animate" id="certifications">
         <div class="container">
             <h2 class="section-title">Skills</h2>
             <ul class="skills-list">
@@ -112,10 +193,48 @@
         <div class="container">
             <p>&copy; 2025 Rhena Shekka Labog. All Rights Reserved.</p>
         </div>
+        <div class="footer-socials">
+            <a href="https://github.com/rhnshee" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="mailto:shekkarhena@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://linkedin.com/in/rhenalabog" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
     </footer>
 
+    <!-- Resume Viewer Modal (Drive-style) -->
+    <div id="resumeModal" class="modal">
+        <div class="modal-drive">
+            <div class="modal-header">
+                <span class="close" onclick="closeResume()">✖</span>
+                <span class="file-name">Rhena_Labog_Resume.pdf</span>
+                <div class="modal-actions">
+                    <a href="resume.pdf" download class="download-btn">⬇ Download</a>
+                    <a href="https://drive.google.com/file/d/1hcIjW333090foW5hDZ2QF2U0SGgeARBW/view" target="_blank" class="open-drive-btn" title="Open in Drive">↗</a>
+                </div>
+            </div>
+            <iframe 
+            src="https://drive.google.com/file/d/1hcIjW333090foW5hDZ2QF2U0SGgeARBW/preview" 
+            frameborder="0" 
+            allow="autoplay" 
+            allowfullscreen>
+            </iframe>
+        </div>
+    </div>  
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-    
+    <!-- Lottie -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    AOS.init({
+        duration: 800,
+        once: true,
+    });
+    </script>
+
     <script>
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -128,6 +247,41 @@
     document.querySelectorAll('.scroll-animate').forEach(section => {
         observer.observe(section);
     });
+
+    //Resume Modal
+    function openResume() {
+        document.getElementById('resumeModal').style.display = 'flex';
+        document.body.classList.add('modal-open');
+    }
+
+    function closeResume() {
+        document.getElementById('resumeModal').style.display = 'none';
+        document.body.classList.remove('modal-open');
+    }
+
+    // Optional: close on ESC
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+        closeResume();
+        }
+    });
+
+    // Optional: close on outside click
+    window.onclick = function(event) {
+        const modal = document.getElementById('resumeModal');
+        if (event.target === modal) {
+        closeResume();
+        }
+    }
+
+    // Tilt.js integration (optional)
+    VanillaTilt.init(document.querySelector(".project-image img"), {
+    max: 10,
+    speed: 400,
+    glare: true,
+    "max-glare": 0.3,
+    });
+
     </script>
 
 
