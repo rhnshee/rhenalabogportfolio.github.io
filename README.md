@@ -17,7 +17,7 @@ Welcome to my professional portfolio website, showcasing my work in web developm
 - Automated tasks
 
 🔗 **[Live Website](https://rhenalabogportfolio-github-io.vercel.app/)**  
-📦 **[Download Demo Package (Google Drive)](https://drive.google.com/https://drive.google.com/drive/folders/1n4lRv82jGjq-cxauAPObwbtLD2Z4QNBU?usp=drive_link)**
+📦 **[Download Demo Package (Google Drive)](https://drive.google.com/drive/folders/1n4lRv82jGjq-cxauAPObwbtLD2Z4QNBU?usp=drive_link)**
 
 ---
 
