@@ -217,18 +217,161 @@ nav a:hover::after {
 }
 
 /*About*/
-.about-content {
-    max-width: 800px;
-    margin: 0 auto;
+/* About Section Styles */
+.about {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f9f9ff 0%, #f0f4ff 100%);
+    position: relative;
+    overflow: hidden;
 }
 
-.about-details {
-    margin-top: 1.5rem;
+.about-header {
+    text-align: center;
+    margin-bottom: 60px;
 }
 
-.about-details p {
-    margin-bottom: 1rem;
-    line-height: 1.6;
+.section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #2d3436;
+    margin-bottom: 15px;
+}
+
+.highlight {
+    color: #6c5ce7;
+    position: relative;
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: rgba(108, 92, 231, 0.2);
+    z-index: -1;
+}
+
+.divider {
+    width: 80px;
+    height: 4px;
+    background: #6c5ce7;
+    margin: 0 auto 20px;
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #636e72;
+    font-weight: 300;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-text {
+    margin-bottom: 40px;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #2d3436;
+    margin-bottom: 20px;
+}
+
+.about-text .lead {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.signature img {
+    height: 60px;
+    margin-top: 20px;
+    opacity: 0.8;
+}
+
+/* Skills Chart */
+.skills-chart {
+    margin-top: 40px;
+}
+
+.skill-item {
+    margin-bottom: 25px;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #2d3436;
+}
+
+.skill-bar {
+    height: 8px;
+    background: #dfe6e9;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: #6c5ce7;
+    border-radius: 4px;
+    transition: width 1.5s ease;
+}
+
+/* Profile Image */
+.about-image {
+    position: relative;
+    text-align: center;
+}
+
+.image-wrapper {
+    position: relative;
+    display: inline-block;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.profile-img {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    border-radius: 20px;
+    transition: transform 0.5s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.shape-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(108, 92, 231, 0.3) 0%, rgba(108, 92, 231, 0.1) 100%);
+    z-index: 1;
+    border-radius: 20px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-image {
+        order: -1;
+        margin-bottom: 50px;
+    }
 }
 
 
