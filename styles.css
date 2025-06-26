@@ -216,6 +216,20 @@ nav a:hover::after {
   }
 }
 
+/*About*/
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-details {
+    margin-top: 1.5rem;
+}
+
+.about-details p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
 
 
 /* Projects */
