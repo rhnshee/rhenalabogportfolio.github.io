@@ -189,28 +189,28 @@
             <h2 class="section-title" data-aos="fade-up">Certifications</h2>
 
             <div class="certifications-gallery">
-                <div class="cert-img-card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="cert-img-card" data-aos="zoom-in" data-aos-delay="100" onclick="openLightbox('certifications/Certificate Hacking Azure AI.jpg')">
                     <img src="certifications/Certificate Hacking Azure AI.jpg" alt="HTML & CSS Certificate">
                     <div class="cert-overlay">
                         <h3>Hacking Azure AI</h3>
                     </div>
                 </div>
 
-                <div class="cert-img-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="cert-img-card" data-aos="zoom-in" data-aos-delay="200" onclick="openLightbox('certifications/Python_Essentials_1_Badge.jpg')">
                     <img src="certifications/Python_Essentials_1_Badge.jpg" alt="JavaScript Certificate">
                     <div class="cert-overlay">
                         <h3>Python Essentials 1</h3>
                     </div>
                 </div>
 
-                <div class="cert-img-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="cert-img-card" data-aos="zoom-in" data-aos-delay="300" onclick="openLightbox('certifications/BITZ2023.jpg')">
                     <img src="certifications/BITZ2023.jpg" alt="React Certificate">
                     <div class="cert-overlay">
                         <h3>BITZ 2023 Session 2</h3>
                     </div>
                 </div>
 
-                <div class="cert-img-card" data-aos="zoom-in" data-aos-delay="400">
+                <div class="cert-img-card" data-aos="zoom-in" data-aos-delay="400" onclick="openLightbox('certifications/EIT_Certificate.jpg')">
                     <img src="certifications/EIT_Certificate.jpg" alt="Git & GitHub Certificate">
                     <div class="cert-overlay">
                         <h3>AI - An Engineering Focus</h3>
@@ -327,8 +327,26 @@
     "max-glare": 0.3,
     });
 
+
+    //Lightbox for Certifications
+    function openLightbox(imgSrc) {
+        document.getElementById('lightbox-img').src = imgSrc;
+        document.getElementById('lightbox').style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeLightbox() {
+        document.getElementById('lightbox').style.display = 'none';
+        document.body.style.overflow = ''; // Re-enable scrolling
+        }
     </script>
 
 
 </body>
+
+<!-- Lightbox Overlay -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" alt="Certificate">
+</div>
+
 </html>
