@@ -31,6 +31,15 @@ section {
     margin-bottom: 40px;
 }
 
+.section-title .highlight {
+  color: #00bfff; /* Light blue highlight color */
+  background: linear-gradient(to right, #00bfff, #1e90ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  font-family: 'DM Serif Display', serif;
+}
+
 .section-description {
     font-size: 1.2rem;
     color: #cccccc;
@@ -609,8 +618,8 @@ body.modal-open {
 
 .certifications-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
 .cert-img-card {
@@ -624,8 +633,11 @@ body.modal-open {
 .cert-img-card img {
   width: 100%;
   height: auto;
-  display: block;
-  transition: transform 0.4s;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .cert-img-card:hover img {
