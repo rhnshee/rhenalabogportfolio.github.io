@@ -594,22 +594,68 @@ body.modal-open {
     font-weight: 500;
 }
 
-/* Skills */
-.skills-list {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    padding: 0;
+/*Certification Section*/
+.certifications {
+  padding: 4rem 0;
+  background: #0a0a0a;
+  color: #ffffff;
 }
 
-.skills-list li {
-    border: 1px solid #fff;
-    padding: 10px 20px;
-    font-weight: 500;
-    text-transform: uppercase;
+.certifications .section-title {
+  text-align: center;
+  color: #00bfff;
+  margin-bottom: 3rem;
+  font-weight: 700;
 }
+
+.certifications-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.cert-img-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  cursor: pointer;
+}
+
+.cert-img-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s;
+}
+
+.cert-img-card:hover img {
+  transform: scale(1.1);
+}
+
+.cert-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.cert-img-card:hover .cert-overlay {
+  opacity: 1;
+}
+
+.cert-overlay h3 {
+  font-size: 1.1rem;
+  color: #00bfff;
+  margin: 0;
+}
+
 
 /* Contact */
 .contact-form {
