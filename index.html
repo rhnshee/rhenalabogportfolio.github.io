@@ -19,11 +19,11 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="min-h-screen bg-gradient-to-br from-gray-900 to-black text-gray-100 font-sans relative">
+<body class="bg-gradient-to-br from-gray-900 to-black text-gray-100 font-sans relative">
     <header>
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="container">
-                <div class="flex items-center justify-between h-1">
+                <div class="flex items-center justify-between h-5">
                     <div class="flex items-center">
                         <a href="#" class="text-2xl font-bold text-white tracking-wider"> RS<span class="highlight">BL.</span></a>
                     </div>
@@ -44,6 +44,15 @@
                         </div>
                     </nav>
                 </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="#projects" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+                <a href="#certifications" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Certifications</a>
+                <a href="#contact" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
             </div>
         </div>
     </header>

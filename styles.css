@@ -16,6 +16,7 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    padding-top: 48px;
 }
 
 section {
@@ -61,14 +62,23 @@ section {
     width: 90%;
     max-width: 1300px;
     margin: 0 auto;
+    top: 10px;
     padding: 20px;
 }
 
 /* Header styling */
 header {
-  padding: 0%;
-  margin-top: 0%;
-  height: 0%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px; /* Smaller height */
+    background-color: #1f2937; /* Equivalent to Tailwind bg-gray-900 */
+    z-index: 1000;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 header h1 {
@@ -644,11 +654,13 @@ body.modal-open {
 }
 
 .cert-img-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-  cursor: pointer;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    aspect-ratio: 4/3;
+    cursor: pointer;
 }
 
 .cert-img-card img {
@@ -704,7 +716,6 @@ body.modal-open {
   max-width: 90%;
   max-height: 90%;
   border-radius: 12px;
-  box-shadow: 0 0 40px rgba(0, 191, 255, 0.5);
   animation: fadeIn 0.5s ease;
 }
 
