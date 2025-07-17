@@ -40,6 +40,14 @@ section {
   font-family: 'DM Serif Display', serif;
 }
 
+.highlight {
+  color: #00bfff; /* Light blue highlight color */
+  background: linear-gradient(to right, #00bfff, #1e90ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
 .section-description {
     font-size: 1.2rem;
     color: #cccccc;
@@ -58,12 +66,9 @@ section {
 
 /* Header styling */
 header {
-    background-color: #000;
-    padding: 0 0;
-    position: sticky;
-    font-family: 'Poppins', sans-serif;
-    top: 0;
-    z-index: 100;
+  padding: 0%;
+  margin-top: 0%;
+  height: 0%;
 }
 
 header h1 {
@@ -76,7 +81,7 @@ nav {
     display: flex;
     justify-content: end;
     gap: 30px;
-    margin-top: 15px;
+    margin-top: 0;
 }
 
 nav a {
@@ -91,7 +96,7 @@ nav a::after {
     display: block;
     width: 0;
     height: 2px;
-    background: #fff;
+    background: linear-gradient(to right, #00bfff, #1e90ff);
     transition: width 0.3s;
 }
 
