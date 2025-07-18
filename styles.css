@@ -82,7 +82,7 @@ body {
 /* Logo Styling */
 .header-logo .logo-link {
     font-family: 'Playfair Display', serif; /* Elegant title font */
-    font-size: 2.8rem; /* Prominent logo size */
+    font-size: 2.0rem; /* Prominent logo size */
     font-weight: 700; /* Bold */
     color: #2c3e50; /* Deep blue-gray, from your contact section title */
     text-decoration: none;
@@ -98,6 +98,7 @@ body {
 .header-logo .logo-highlight {
     color: #3498db; /* The vibrant blue highlight from your original contact form */
     font-weight: 400; /* Normal weight for contrast */
+    font-family: 'Playfair Display', serif;
 }
 
 /* Desktop Navigation */
