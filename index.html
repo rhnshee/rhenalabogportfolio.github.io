@@ -201,7 +201,7 @@
                     </ul>
                     <div class="project-actions">
                         <a href="https://core3.paradisehoteltomasmorato.com/" class="btn animate" target="_blank">Request Demo</a>
-                        <button id="viewMoreProjectsBtn" class="btn animate">View More Projects <i class="fas fa-arrow-right"></i></button>
+                        <button id="viewMoreProjectsBtn" class="btn animate">View More<i class="fas fa-arrow-right"></i></button>
                     </div>
                 </div>
                 <div class="project-image">
@@ -356,18 +356,18 @@
             <span class="close-button">&times;</span>
             <h3 class="modal-title">All Project Mockups</h3>
             <div class="gallery-grid">
-                <a class="prev-arrow">&#10094;</a> <a class="next-arrow">&#10095;</a> <div class="gallery-item active"> <img src="images/mockup1.png" alt="Project Mockup 1">
+                <a class="prev-arrow">&#10094;</a> <a class="next-arrow">&#10095;</a>
+                <div class="gallery-item active"> <img src="images/mockup1.png" alt="Project Mockup 1"></div>
+                <div class="gallery-item"><img src="images/mockup2.png" alt="Project Mockup 2"></div>
+                <div class="gallery-item"><img src="images/mockup3.png" alt="Project Mockup 3"></div>
+                <div class="gallery-item"><img src="images/mockup4.png" alt="Project Mockup 4"></div>
                 </div>
-                <div class="gallery-item">
-                    <img src="images/mockup2.png" alt="Project Mockup 2">
+            <div class="carousel-indicators">
+                <span class="indicator-dot active" data-slide-to="0"></span>
+                <span class="indicator-dot" data-slide-to="1"></span>
+                <span class="indicator-dot" data-slide-to="2"></span>
+                <span class="indicator-dot" data-slide-to="3"></span>
                 </div>
-                <div class="gallery-item">
-                    <img src="images/mockup3.png" alt="Project Mockup 3">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/mockup4.png" alt="Project Mockup 4">
-                </div>
-            </div>
         </div>
     </div>
 
@@ -477,16 +477,26 @@
             const nextArrow = document.querySelector('.next-arrow');
             let currentSlide = 0; // Keep track of the current image index
 
+            // NEW: Indicator dots elements
+            const indicatorDots = document.querySelectorAll('.indicator-dot'); // Select all dots
+
             // Function to show a specific slide
             function showSlide(index) {
                 // Hide all slides
                 galleryItems.forEach(item => {
                     item.classList.remove('active');
                 });
-
                 // Show the selected slide
                 galleryItems[index].classList.add('active');
                 currentSlide = index;
+
+                // NEW: Update active indicator dot
+                indicatorDots.forEach(dot => {
+                    dot.classList.remove('active'); // Remove active class from all dots
+                });
+                if (indicatorDots[index]) { // Ensure the dot for the current index exists
+                    indicatorDots[index].classList.add('active'); // Add active class to the corresponding dot
+                }
             }
 
             // Event listener to open the modal
@@ -531,6 +541,13 @@
                     showSlide(currentSlide);
                 });
             }
+
+            // NEW: Event listeners for indicator dots
+            indicatorDots.forEach((dot, index) => {
+                dot.addEventListener('click', function() {
+                    showSlide(index); // Jump to the slide corresponding to the clicked dot's index
+                });
+            });
         });
     </script>
 

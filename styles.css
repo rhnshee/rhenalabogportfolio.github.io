@@ -1225,7 +1225,7 @@ body.modal-open {
 }
 
 .gallery-item img {
-    max-width: 100%;
+    max-width: 80%;
     height: auto; /* Auto height to maintain aspect ratio */
     max-height: 70vh; /* Limit height to fit screen */
     object-fit: contain; /* Ensure entire image is visible, no cropping */
@@ -1240,33 +1240,84 @@ body.modal-open {
     cursor: pointer;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    width: auto;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 30px;
-    transition: 0.3s ease;
-    border-radius: 0 3px 3px 0;
+    transform: translateY(-50%); /* Keeps them perfectly vertically centered */
+
+    /* Sleek & Modern Base Styling */
+    width: 50px; /* Maintains a clickable area */
+    height: 50px; /* Ensures a perfect circular clickable area */
+    display: flex; /* Centers the arrow icon inside its invisible container */
+    align-items: center;
+    justify-content: center;
+    font-size: 28px; /* Size of the arrow icon itself */
+    color: #807d7d; /* Off-white color for the arrow icon */
+
+    /* --- Key Changes: No default background, border, or shadow --- */
+    background-color: transparent; /* Makes the background completely invisible */
+    border: none; /* Removes any default border */
+    box-shadow: none; /* Removes any default shadow */
+    backdrop-filter: none; /* Removes any blur effect */
+    -webkit-backdrop-filter: none; /* Safari compatibility */
+
+    text-decoration: none; /* Ensures no underline */
+
+    /* Smooth & Elegant Transitions */
+    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1); /* For smooth hover effects */
     user-select: none;
-    -webkit-user-select: none;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    z-index: 1001; /* Ensure arrows are above image but within modal */
+    -webkit-user-select: none; /* Prevent text selection */
+    z-index: 1001; /* Ensures arrows are above the image */
 }
 
 .prev-arrow {
-    left: 0;
-    border-radius: 3px 0 0 3px;
+    left: 20px;
 }
 
 .next-arrow {
-    right: 0;
-    border-radius: 0 3px 3px 0;
+    right: 20px;
 }
 
-.prev-arrow:hover, .next-arrow:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #3498db; /* Highlight color on hover */
+/* Hover Effects for Enhanced Interactivity and Highlight */
+.prev-arrow:hover,
+.next-arrow:hover {
+    color: #2980b9; /* Ensures the arrow icon remains clearly visible */
+    transform: translateY(-50%) scale(1.08); /* Subtle grow effect for interaction feedback */
+}
+
+/* Active State for a "Pressed" Feel */
+.prev-arrow:active,
+.next-arrow:active {
+    transform: translateY(-50%) scale(0.95); /* Slightly shrink on click */
+    color: #2980b9;
+}
+
+.carousel-indicators {
+    display: flex; /* Use flexbox to arrange dots horizontally */
+    justify-content: center; /* Center the dots below the image */
+    margin-top: 30px; /* Space between the image and the dots */
+    gap: 12px; /* Space between individual dots */
+}
+
+.indicator-dot {
+    height: 10px; /* Size of the dot */
+    width: 10px; /* Size of the dot */
+    background-color: rgba(255, 255, 255, 0.4); /* Semi-transparent white for inactive dots */
+    border: 1px solid rgba(255, 255, 255, 0.6); /* Slightly more opaque white border */
+    border-radius: 50%; /* Makes it a perfect circle */
+    display: inline-block; /* Ensures proper sizing and display */
+    cursor: pointer; /* Indicates it's clickable */
+    transition: all 0.3s ease; /* Smooth transition for hover and active states */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.indicator-dot:hover {
+    background-color: rgba(255, 255, 255, 0.7); /* Brighter white on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.indicator-dot.active {
+    background-color: #3498db; /* Your theme color for the active dot */
+    border-color: #3498db; /* Matching border color */
+    transform: scale(1.2); /* Slightly larger to indicate it's active */
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.6); /* More prominent shadow for the active dot */
 }
 
 .close-button {
