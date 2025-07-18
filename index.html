@@ -11,52 +11,41 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <title>Rhena Shekka Labog | Portfolio</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+   
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gradient-to-br from-gray-900 to-black text-gray-100 font-sans relative">
-    <header>
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="container">
-                <div class="flex items-center justify-between h-5">
-                    <div class="flex items-center">
-                        <a href="#" class="text-2xl font-bold text-white tracking-wider"> RS<span class="highlight">BL.</span></a>
-                    </div>
-                    <nav>
-                        <div class="hidden md:block">
-                            <div class="ml-10 flex items-baseline space-x-4">
-                                <a href="#about" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-md font-medium transition-colors">About</a>
-                                <a href="#projects" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-md font-medium transition-colors">Projects</a>
-                                <a href="#certifications" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-md font-medium transition-colors">Certifications</a>
-                                <a href="#contact" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-md font-medium transition-colors">Contact</a>
-                            </div>
-                        </div>
-                        <div class="md:hidden">
-                            <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
-                                <span class="sr-only">Open main menu</span>
-                                <i data-lucide="menu" class="block h-6 w-6"></i>
-                            </button>
-                        </div>
-                    </nav>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="header-content">
+                <div class="header-logo">
+                    <a href="#" class="logo-link">RS<span class="logo-highlight">BL.</span></a>
                 </div>
+                <nav class="header-nav">
+                    <div class="nav-desktop">
+                        <a href="#about" class="nav-item">About</a>
+                        <a href="#projects" class="nav-item">Projects</a>
+                        <a href="#certifications" class="nav-item">Certifications</a>
+                        <a href="#contact" class="nav-item">Contact</a>
+                    </div>
+                    <div class="nav-mobile-toggle">
+                        <button id="mobile-menu-button" class="mobile-menu-button">
+                            <span class="sr-only">Open main menu</span>
+                            <svg class="menu-icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                        </button>
+                    </div>
+                </nav>
             </div>
         </div>
-        <!-- Mobile menu -->
-        <div class="md:hidden hidden" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#about" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
-                <a href="#projects" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
-                <a href="#certifications" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Certifications</a>
-                <a href="#contact" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
-            </div>
+        <div class="mobile-menu-panel" id="mobile-menu">
+            <a href="#about" class="mobile-nav-item">About</a>
+            <a href="#projects" class="mobile-nav-item">Projects</a>
+            <a href="#certifications" class="mobile-nav-item">Certifications</a>
+            <a href="#contact" class="mobile-nav-item">Contact</a>
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero scroll-animate">
         <div class="hero-content">
             <div class="hero-img-container">
@@ -217,7 +206,7 @@
                 </div>
             </div>
         </div>
-        <div class="project-image-phone" style="width: 600px; height: 600px;">
+        <div class="project-image-phone mt-5" style="width: 600px; height: 600px;">
             <img src="images/preview.png" alt="Hotel System Mockup">
         </div>
     </section>
@@ -263,30 +252,84 @@
     </section>
 
 
-    <section class="contact scroll-animate" id="contact">
-        <div class="container">
-            <h2 class="section-title">Contact Me</h2>
-            <form class="contact-form" action="https://formspree.io/f/myzjnpgq" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                <button type="submit" class="btn animate">Send Message</button>
-            </form>
+    <section class="contact-section" id="contact">
+    <div class="container">
+        <div class="contact-header">
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="section-subtitle">Have a project, a question, or simply want to connect? I would be delighted to hear from you. Please fill out the form below, and I will get back to you promptly.</p>
         </div>
-    </section>
+
+        <div class="contact-wrapper">
+
+            <div class="form-column">
+                <form class="contact-form" action="https://formspree.io/f/myzjnpgq" method="POST">
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <input type="text" name="name" id="name" class="form-input" placeholder=" " required>
+                            <label for="name" class="form-label">Full Name</label>
+                            <div class="form-line"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" id="email" class="form-input" placeholder=" " required>
+                            <label for="email" class="form-label">Email Address</label>
+                            <div class="form-line"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" id="message" class="form-input" rows="5" placeholder=" " required></textarea>
+                        <label for="message" class="form-label">Your Message</label>
+                        <div class="form-line"></div>
+                    </div>
+                    <button type="submit" class="btn-submit">Send Message &rarr;</button>
+                </form>
+            </div>
+
+            <div class="socials-column">
+                <h3>Let's Be Friends</h3>
+                <p>Follow my journey on social media. I'm always up for a good chat and new connections!</p>
+                <div class="social-icons">
+                    <a href="#" class="social-link linkedin" aria-label="LinkedIn Profile" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link github" aria-label="GitHub Profile" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link twitter" aria-label="Twitter Profile" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link instagram" aria-label="Instagram Profile" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
     
 
     <footer>
-        <div class="container">
+        <div class="footer-grid-container">
+            <div class="footer-about">
+                <h3 class="footer-heading">About RSBL.</h3>
+                <p>I'm Rhena Shekka Labog, a Web Developer passionate about crafting elegant and user-centric digital experiences. Let's build something amazing together!</p>
+            </div>
+
+            <div class="footer-nav">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul>
+                    <li><a href="#about" class="footer-link">About</a></li>
+                    <li><a href="#projects" class="footer-link">Projects</a></li>
+                    <li><a href="#certifications" class="footer-link">Certifications</a></li>
+                    <li><a href="#contact" class="footer-link">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3 class="footer-heading">Get in Touch</h3>
+                <p><i class="fas fa-envelope footer-icon"></i> shekkarhena@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt footer-icon"></i> Quezon City, Philippines</p>
+                <a href="#contact" class="btn footer-btn">Say Hello!</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
             <p>&copy; 2025 Rhena Shekka Labog. All Rights Reserved.</p>
         </div>
-        <div class="footer-socials">
-            <a href="https://github.com/rhnshee" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="mailto:shekkarhena@gmail.com"><i class="fas fa-envelope"></i></a>
-            <a href="https://linkedin.com/in/rhenalabog" target="_blank"><i class="fab fa-linkedin"></i></a>
-        </div>
     </footer>
-
+    
     <!-- Resume Viewer Modal (Drive-style) -->
     <div id="resumeModal" class="modal">
         <div class="modal-drive">
@@ -381,6 +424,24 @@
         document.getElementById('lightbox').style.display = 'none';
         document.body.style.overflow = ''; // Re-enable scrolling
         }
+
+    //Mobile Menu
+     document.addEventListener('DOMContentLoaded', function () {
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', function () {
+            mobileMenu.classList.toggle('open');
+        });
+
+        // Optional: Close menu when a link is clicked
+        const mobileNavItems = mobileMenu.querySelectorAll('.mobile-nav-item');
+        mobileNavItems.forEach(item => {
+            item.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+            });
+        });
+    });
     </script>
 
 
