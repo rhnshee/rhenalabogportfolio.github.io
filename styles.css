@@ -1340,6 +1340,33 @@ body.modal-open {
   to   { opacity: 1; transform: scale(1); }
 }
 
+/* Responsive adjustments for Certifications */
+@media (max-width: 768px) {
+    .certifications .section-title {
+        font-size: 2.8rem;
+    }
+    .certifications-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .cert-img-card img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .certifications .section-title {
+        font-size: 2.2rem;
+    }
+    .certifications-gallery {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+    }
+    .cert-img-card img {
+        height: 180px;
+    }
+    .cert-overlay h3 {
+        font-size: 1rem;
+    }
+}
 
 
 /* Contact */
