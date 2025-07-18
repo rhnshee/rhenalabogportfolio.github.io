@@ -1300,7 +1300,7 @@ body.modal-open {
     height: 10px; /* Size of the dot */
     width: 10px; /* Size of the dot */
     background-color: rgba(255, 255, 255, 0.4); /* Semi-transparent white for inactive dots */
-    border: 1px solid rgba(255, 255, 255, 0.6); /* Slightly more opaque white border */
+    border: 1px solid rgba(121, 119, 119, 0.6); /* Slightly more opaque white border */
     border-radius: 50%; /* Makes it a perfect circle */
     display: inline-block; /* Ensures proper sizing and display */
     cursor: pointer; /* Indicates it's clickable */
