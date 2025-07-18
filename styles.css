@@ -955,16 +955,14 @@ body.modal-open {
     color: #333;
     position: relative;
     overflow: hidden;
-    /* Adjust padding-bottom to create space for the phone image below the container */
-    padding-bottom: 450px; /* This value needs to accommodate the height of the phone image + desired spacing */
+    /* This padding-bottom needs to be carefully adjusted for each breakpoint */
+    padding-bottom: 450px; /* Default for larger screens; overridden in media queries */
 }
 
 .projects .container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
-    /* No need for position: relative here if project-image-phone is relative to .projects */
-    /* z-index is also not needed here if project-image-phone is not overlaying */
 }
 
 .projects .section-title {
@@ -1113,44 +1111,28 @@ body.modal-open {
     object-fit: contain;
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    /* No animation on this image */
 }
 
-/* --- ADJUSTMENTS FOR STATIC PHONE IMAGE --- */
+/* --- Responsive Phone Image Positioning --- */
 .project-image-phone {
     position: absolute;
-    /* Adjusted top to push it down from the top of the .projects section */
-    /* This value needs careful adjustment based on the height of your content + desired gap */
-    top: 800px; /* Example value: Adjust this to create the desired space from the main container */
+    /* Default 'top' for larger screens, assuming 800px from previous is good */
+    top: 800px; /* Start with a value that works well for desktops/large tablets */
     left: 50%;
-    transform: translateX(-50%); /* Center horizontally */
-    width: 600px; /* Max width for the phone image */
-    height: auto; /* Let height adjust based on width to maintain aspect ratio */
+    transform: translateX(-50%);
+    width: 600px; /* Default width for larger screens */
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Removed z-index, opacity, animation */
-    /* z-index: 0; */
-    /* pointer-events: none; (Still good to keep if it's purely decorative) */
-    /* opacity: 0.2; */
-    /* filter: grayscale(80%); (Removed based on "no opacity" interpretation, also removes grayscale) */
-    /* animation: none; (Explicitly remove animation) */
+    /* No opacity, no animations, no z-index, no grayscale */
 }
 
 .project-image-phone img {
     max-width: 100%;
     height: auto;
     display: block;
-    /* Removed individual image animations if they were applied directly here */
 }
-/* --- END ADJUSTMENTS --- */
-
-
-/* No Keyframe Animations for project-image-phone */
-/* @keyframes floatImage { ... } */
-/* @keyframes rotatePhone { ... } */
-/* @keyframes fadeInOut { ... } */
-
 
 /* Responsive adjustments for Projects */
 @media (max-width: 992px) {
@@ -1169,17 +1151,21 @@ body.modal-open {
         padding: 30px;
     }
     .project-image img {
-        animation: none; /* Ensure no float animation */
+        animation: none;
+    }
+    /* Adjust for screens up to 992px */
+    .projects {
+        padding-bottom: 350px; /* Adjust padding for phone image space */
     }
     .project-image-phone {
-        top: 800px; /* Adjust for smaller screens */
-        width: 400px;
+        top: 800px; /* Adjust top for this breakpoint; may need to be less than before */
+        width: 450px; /* Make it smaller */
     }
 }
 
 @media (max-width: 768px) {
     .projects {
-        padding-bottom: 180px; /* Adjust padding for smaller screens */
+        padding-bottom: 280px; /* More padding adjustment */
     }
     .projects .section-title {
         font-size: 2.8rem;
@@ -1198,15 +1184,16 @@ body.modal-open {
         padding: 10px 25px;
         font-size: 0.95rem;
     }
+    /* Adjust for screens up to 768px */
     .project-image-phone {
-        top: 950px; /* Further adjust for smaller screens */
-        width: 350px;
+        top: 900px; /* Adjust top for this breakpoint */
+        width: 380px; /* Make it even smaller */
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) { /* Added breakpoint for smaller tablets/large phones */
     .projects {
-        padding-bottom: 120px; /* Further adjust padding for very small screens */
+        padding-bottom: 220px; /* Adjust for very small screens */
     }
     .projects .section-title {
         font-size: 2.2rem;
@@ -1217,14 +1204,25 @@ body.modal-open {
     .project-details h3 {
         font-size: 1.5rem;
     }
+    /* Adjust for screens up to 576px */
     .project-image-phone {
-        top: 1100px; /* Further adjust for mobile */
-        width: 280px;
+        top: 1000px; /* Adjust top */
+        width: 300px; /* Smaller still */
+    }
+}
+
+@media (max-width: 480px) {
+    .projects {
+        padding-bottom: 180px; /* Final adjustment for tiny screens */
+    }
+    .project-image-phone {
+        top: 1050px; /* Fine-tune for mobile */
+        width: 250px; /* Smallest size for narrow screens */
     }
 }
 
 
-/* Certifications Section */
+/*Certification Section*/
 .certifications {
     background-color: #f8f9fa; /* Consistent light background */
     padding: 100px 0;
@@ -1264,38 +1262,33 @@ body.modal-open {
 }
 
 .certifications-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid for certs */
-    gap: 30px; /* Space between cert cards */
-    justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
 .cert-img-card {
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
     position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    aspect-ratio: 4/3;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
-
-.cert-img-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 .cert-img-card img {
-    width: 100%;
-    height: 220px; /* Fixed height for consistent look */
-    object-fit: cover; /* Cover the area, crop if necessary */
-    display: block;
-    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .cert-img-card:hover img {
-    transform: scale(1.05); /* Zoom in on image */
-    filter: brightness(0.7); /* Darken image slightly */
+  transform: scale(1.1);
 }
 
 .cert-overlay {
