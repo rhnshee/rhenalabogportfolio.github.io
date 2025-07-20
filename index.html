@@ -6,6 +6,7 @@
     <meta name="keywords" content="Rhena, Shekka, Labog, Portfolio, Web Developer, IT, Projects">
     <meta name="author" content="Rhena Shekka Labog">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
@@ -13,6 +14,45 @@
     <title>Rhena Shekka Labog | Portfolio</title>
    
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .project-slide-image {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-slide-image:hover .image-overlay {
+            opacity: 1;
+        }
+
+        .view-project {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 500;
+            padding: 10px 20px;
+            border: 2px solid white;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .project-slide-image:hover .view-project {
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>
     <header class="main-header">
@@ -177,36 +217,142 @@
     </section>
 
     <!--Projects Section-->
-    <section class="projects scroll-animate" id="projects">
+    <section class="projects-carousel-section" id="projects">
         <div class="container">
             <h2 class="section-title" data-aos="fade-up">
-                Featured <span class="highlight">Project</span>
+                My <span class="highlight">Creations</span>
             </h2>
 
-            <div class="featured-project">
-                <div class="project-details">
-                    <h3>Hotel and Restaurant Management System</h3>
-                    <p><strong>Focus:</strong> Housekeeping and Maintenance Module</p>
-                    <p><strong>Role:</strong> Front-end Developer</p>
-                    <p>
-                        A custom-built management system designed to streamline housekeeping and maintenance operations in hotel and restaurant environments. This project automates task assignments, tracks room statuses, schedules maintenance, and improves overall operational efficiency.
-                    </p>
-                    <ul class="tech-stack">
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>PHP</li>
-                        <li>MySQL</li>
-                        <li>Bootstrap</li>
-                    </ul>
-                    <div class="project-actions">
-                        <a href="https://core3.paradisehoteltomasmorato.com/" class="btn animate" target="_blank">Request Demo</a>
-                        <button id="viewMoreProjectsBtn" class="btn animate">View More<i class="fas fa-arrow-right"></i></button>
+            <div class="swiper project-swiper" data-aos="fade-up" data-aos-delay="200">
+                <div class="swiper-wrapper">
+                    <!-- Reordered slides for E-commerce to start in center -->
+                    <div class="swiper-slide">
+                        <div class="project-slide-card project-trigger"
+                            data-title="Hotel Management System"
+                            data-date="OCTOBER / 2024"
+                            data-img-src="images/mock-up-previewed.png"
+                            data-description="A custom-built management system designed to streamline housekeeping and maintenance operations in hotel and restaurant environments. This project automates task assignments, tracks room statuses, schedules maintenance, and improves overall operational efficiency."
+                            data-tech="PHP,MySQL,Bootstrap,JavaScript,HTML,CSS"
+                            data-link="https://core3.paradisehoteltomasmorato.com/">
+                            <div class="project-slide-image">
+                                <img src="images/mock-up-previewed.png" alt="Hotel System Mockup">
+                            </div>
+                            <div class="project-slide-content">
+                                <h3>Hotel Management System</h3>
+                                <p>A system to streamline housekeeping and maintenance operations...</p>
+                                <div class="project-slide-tags"><span>PHP</span><span>MySQL</span><span>Bootstrap</span></div>
+                                <a href="#" class="btn-project-link" onclick="event.preventDefault()">View Details <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="project-slide-card project-trigger"
+                            data-title="E-commerce Platform"
+                            data-date="FEBRUARY / 2025"
+                            data-img-src="images/ecommerce-mockup.png"
+                            data-description="A full-stack e-commerce site with a dynamic product catalog, secure user authentication via JWT, a streamlined shopping cart and checkout process, and an intuitive admin dashboard for managing inventory, orders, and users."
+                            data-tech="React,Node.js,MongoDB,Express,JWT"
+                            data-link="#">
+                            <div class="project-slide-image">
+                                <img src="images/ecommerce-mockup.png" alt="E-commerce Mockup">
+                            </div>
+                            <div class="project-slide-content">
+                                <h3>E-commerce Platform</h3>
+                                <p>A full-stack e-commerce site with a product catalog, shopping cart...</p>
+                                <div class="project-slide-tags"><span>React</span><span>Node.js</span><span>MongoDB</span></div>
+                                <a href="#" class="btn-project-link" onclick="event.preventDefault()">View Details <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="project-slide-card project-trigger"
+                            data-title="Creative Portfolio"
+                            data-date="JUNE / 2025"
+                            data-img-src="images/portfolio-mockup.png"
+                            data-description="A visually-driven personal portfolio designed to showcase creative work with a unique flair. It features a dynamic grid layout, buttery-smooth page transitions powered by GSAP, and a minimalist design to keep the focus entirely on the projects."
+                            data-tech="Figma,GSAP,SCSS,JavaScript"
+                            data-link="#">
+                            <div class="project-slide-image">
+                                <img src="images/portfolio-mockup.png" alt="Portfolio Mockup">
+                            </div>
+                            <div class="project-slide-content">
+                                <h3>Creative Portfolio</h3>
+                                <p>A visually-driven portfolio with smooth page transitions and a dynamic grid...</p>
+                                <div class="project-slide-tags"><span>Figma</span><span>GSAP</span><span>SCSS</span></div>
+                                <a href="#" class="btn-project-link" onclick="event.preventDefault()">View Details <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 4: TaskFlow Productivity App -->
+                    <div class="swiper-slide">
+                        <div class="project-slide-card project-trigger"
+                            data-title="TaskFlow Productivity App"
+                            data-date="MARCH / 2025"
+                            data-img-src="images/taskflow-mockup.png"
+                            data-description="A productivity app for managing daily tasks, habit streaks, and goals. Includes drag-and-drop Kanban boards, calendar sync, and Pomodoro timers. Built for focus-driven professionals and students."
+                            data-tech="Vue.js,Firebase,SCSS,GSAP"
+                            data-link="#">
+                            <div class="project-slide-image">
+                                <img src="images/taskflow-mockup.png" alt="TaskFlow App Mockup">
+                            </div>
+                            <div class="project-slide-content">
+                                <h3>TaskFlow Productivity App</h3>
+                                <p>Boost your focus and stay organized with calendar sync and habit tracking...</p>
+                                <div class="project-slide-tags"><span>Vue.js</span><span>Firebase</span><span>SCSS</span></div>
+                                <a href="#" class="btn-project-link" onclick="event.preventDefault()">View Details <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5: Foodie Blog CMS -->
+                    <div class="swiper-slide">
+                        <div class="project-slide-card project-trigger"
+                            data-title="Foodie Blog CMS"
+                            data-date="JANUARY / 2025"
+                            data-img-src="images/foodie-blog-mockup.png"
+                            data-description="A custom CMS designed for food bloggers to write, manage, and publish recipes with image galleries and SEO tools. Includes user login, comment moderation, and a rating system."
+                            data-tech="Laravel,Blade,Tailwind,MySQL"
+                            data-link="#">
+                            <div class="project-slide-image">
+                                <img src="images/foodie-blog-mockup.png" alt="Foodie Blog CMS Mockup">
+                            </div>
+                            <div class="project-slide-content">
+                                <h3>Foodie Blog CMS</h3>
+                                <p>A feature-rich CMS tailored for food bloggers and culinary creators...</p>
+                                <div class="project-slide-tags"><span>Laravel</span><span>Tailwind</span><span>MySQL</span></div>
+                                <a href="#" class="btn-project-link" onclick="event.preventDefault()">View Details <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 6: EduTrack Learning Portal -->
+                    <div class="swiper-slide">
+                        <div class="project-slide-card project-trigger"
+                            data-title="EduTrack Learning Portal"
+                            data-date="DECEMBER / 2024"
+                            data-img-src="images/edutrack-mockup.png"
+                            data-description="An e-learning platform where students can track lessons, complete quizzes, and earn certificates. Includes instructor dashboards, course analytics, and responsive design."
+                            data-tech="Next.js,PostgreSQL,Chart.js,Figma"
+                            data-link="#">
+                            <div class="project-slide-image">
+                                <img src="images/edutrack-mockup.png" alt="EduTrack Mockup">
+                            </div>
+                            <div class="project-slide-content">
+                                <h3>EduTrack Learning Portal</h3>
+                                <p>Track lessons, complete quizzes, and monitor progress with clean analytics...</p>
+                                <div class="project-slide-tags"><span>Next.js</span><span>PostgreSQL</span><span>Figma</span></div>
+                                <a href="#" class="btn-project-link" onclick="event.preventDefault()">View Details <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="project-image">
-                    <img src="images/mock-up-previewed.png" alt="Hotel System Mockup">
-                </div>
+                <!-- Navigation & Pagination -->
+                
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </section>
@@ -357,23 +503,28 @@
         </div>
     </div>  
 
-    <div id="projectsModal" class="modalProjects">
+    <div id="projectModal" class="modal-container">
         <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h3 class="modal-title">Project Mockups</h3>
-            <div class="gallery-grid">
-                <a class="prev-arrow">&#10094;</a> <a class="next-arrow">&#10095;</a>
-                <div class="gallery-item active"> <img src="images/mockup1.png" alt="Project Mockup 1"></div>
-                <div class="gallery-item"><img src="images/mockup2.png" alt="Project Mockup 2"></div>
-                <div class="gallery-item"><img src="images/mockup3.png" alt="Project Mockup 3"></div>
-                <div class="gallery-item"><img src="images/mockup4.png" alt="Project Mockup 4"></div>
+            <span class="modal-close-btn">&times;</span>
+            <div class="modal-body">
+                <div class="modal-text-content">
+                    <div id="modalDate" class="modal-project-date"></div>
+                    <h2 id="modalTitle" class="modal-project-title"></h2>
+                    <p id="modalDescription" class="modal-project-description"></p>
+                    <div id="modalTech" class="modal-project-tech"></div>
+                    <a id="modalLink" href="#" target="_blank" class="modal-project-link">
+                        View Live Project
+                    </a>
                 </div>
-            <div class="carousel-indicators">
-                <span class="indicator-dot active" data-slide-to="0"></span>
-                <span class="indicator-dot" data-slide-to="1"></span>
-                <span class="indicator-dot" data-slide-to="2"></span>
-                <span class="indicator-dot" data-slide-to="3"></span>
+                <div class="modal-image-content">
+                    <img id="modalImage" src="" alt="Project Image">
                 </div>
+                <div class="modal-thumbnails">
+                    <img class="thumbnail-item" src="/images/mockup1.png" alt="Thumbnail 1">
+                    <img class="thumbnail-item" src="/images/mockup2.png" alt="Thumbnail 2">
+                    <img class="thumbnail-item" src="/images/mockup3.png" alt="Thumbnail 3">
+                    </div>
+            </div>
         </div>
     </div>
 
@@ -557,12 +708,250 @@
         });
     </script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const swiper = new Swiper('.project-swiper', {
+                effect: 'coverflow',
+                grabCursor: true,
+                centeredSlides: true,  // Keeps the active slide in the center
+                slidesPerView: 3,      // Shows 3 slides: 1 centered, 2 on sides
+                initialSlide: 0,       // Starts with the first slide (index 0) centered
+                loop: true,            // Ensures continuous looping from end to start and vice-versa
+                coverflowEffect: {
+                    rotate: 50,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows: true,
+                },
+                navigation: {
+                    prevEl: '.swiper-button-prev',
+                    nextEl: '.swiper-button-next',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            });
+        });
+
+        // --- MODAL SCRIPT ---
+
+        // Get all the elements we need
+        const modalContainer = document.getElementById('projectModal');
+        const closeBtn = document.querySelector('.modal-close-btn');
+        const projectTriggers = document.querySelectorAll('.project-trigger');
+
+        // Get the placeholder elements inside the modal
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDate = document.getElementById('modalDate');
+        const modalDescription = document.getElementById('modalDescription');
+        const modalImage = document.getElementById('modalImage');
+        const modalTechContainer = document.getElementById('modalTech');
+        const modalLink = document.getElementById('modalLink');
+
+        // Function to open the modal
+        const openModal = (projectCard) => {
+            // Get data from the clicked card's data attributes
+            const title = projectCard.dataset.title;
+            const date = projectCard.dataset.date;
+            const description = projectCard.dataset.description;
+            const imgSrc = projectCard.dataset.imgSrc;
+            const tech = projectCard.dataset.tech.split(','); // Split string into an array
+            const link = projectCard.dataset.link;
+
+            // Populate the modal with the data
+            modalTitle.textContent = title;
+            modalDate.textContent = date;
+            modalDescription.textContent = description;
+            modalImage.src = imgSrc;
+            modalLink.href = link;
+
+            // Create tech tags dynamically
+            modalTechContainer.innerHTML = ''; // Clear previous tags
+            tech.forEach(tag => {
+                const span = document.createElement('span');
+                span.textContent = tag;
+                modalTechContainer.appendChild(span);
+            });
+
+            // Show the modal
+            modalContainer.style.display = 'flex';
+            document.body.classList.add('modal-open');
+        };
+
+        // Function to close the modal
+        const closeModal = () => {
+            modalContainer.style.display = 'none';
+            document.body.classList.remove('modal-open');
+        };
+
+        // Add click event listeners to all project cards
+        projectTriggers.forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                openModal(trigger);
+            });
+        });
+
+        // Add click event to the close button
+        closeBtn.addEventListener('click', closeModal);
+
+        // Add click event to the modal container (to close when clicking outside the content)
+        modalContainer.addEventListener('click', (event) => {
+            if (event.target === modalContainer) {
+                closeModal();
+            }
+        });
+
+        // Add keyboard event to close with the 'Escape' key
+        window.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+    const modalImage = document.getElementById('modalImage');
+    const modalThumbnailsContainer = document.querySelector('.modal-thumbnails');
+
+    // Define your project data
+    const projectData = {
+        title: "My Awesome Project",
+        mainImage: "Portfolio/images/mock-up-previewed.png", // Ensure this path is correct
+        thumbnails: [
+            "Portfolio/images/mockup1.png", // Ensure these paths are correct
+            "Portfolio/images/mockup2.png",
+            "Portfolio/images/mockup3.png"
+        ]
+    };
+
+    // --- Function to Populate the Modal ---
+    // This function will take project data and update the modal's content
+    function populateProjectModal(project) {
+        // Update the main modal image
+        if (modalImage && project.mainImage) {
+            modalImage.src = project.mainImage;
+        }
+
+        // Clear existing thumbnails and add new ones
+        if (modalThumbnailsContainer && project.thumbnails) {
+            modalThumbnailsContainer.innerHTML = ''; // Clear previous thumbnails
+
+            project.thumbnails.forEach(thumbSrc => {
+                const img = document.createElement('img');
+                img.src = thumbSrc;
+                img.alt = "Project Thumbnail"; // Good for accessibility
+                img.classList.add('thumbnail-item'); // Apply your thumbnail styling
+                modalThumbnailsContainer.appendChild(img);
+            });
+        }
+
+        // You'd also populate other modal elements here if needed:
+        // document.getElementById('modalTitle').textContent = project.title;
+        // etc.
+    }
+
+    // --- Event Listener for Thumbnail Clicks ---
+    if (modalThumbnailsContainer) {
+        modalThumbnailsContainer.addEventListener('click', function(event) {
+            // Check if the clicked element is an image (thumbnail)
+            if (event.target.tagName === 'IMG' && event.target.classList.contains('thumbnail-item')) {
+                // Get the source of the clicked thumbnail
+                const newImageSrc = event.target.src;
+
+                // Update the main modal image
+                if (modalImage) {
+                    modalImage.src = newImageSrc;
+
+                    // Optional: Add/remove an 'active' class on thumbnails for visual feedback
+                    // document.querySelectorAll('.thumbnail-item').forEach(img => img.classList.remove('active'));
+                    // event.target.classList.add('active');
+                }
+            }
+        });
+    }
+
+    // --- How to Trigger Populating the Modal ---
+    // You need to call populateProjectModal() when your modal is actually opened.
+    // For example, if you have a button or an event that opens the modal:
+
+    // Example 1: Call it immediately on page load to test (for debugging)
+    populateProjectModal(projectData);
+
+    // Example 2: More realistically, you'd call it when a user clicks something
+    // For instance, if you have project cards and clicking one opens the modal:
+    /*
+    const projectCards = document.querySelectorAll('.project-card'); // Assuming you have elements with this class
+    projectCards.forEach(card => {
+        card.addEventListener('click', function() {
+            // Get the specific project data for this card (e.g., from data attributes or an ID)
+            // For simplicity, we'll just use the predefined projectData here:
+            populateProjectModal(projectData);
+            document.getElementById('projectModal').style.display = 'block'; // Show the modal
+        });
+    });
+    */
+
+    // --- Modal Close Button Logic (Add if not already present) ---
+    const closeBtn = document.querySelector('.modal-close-btn');
+    const projectModal = document.getElementById('projectModal');
+
+    if (closeBtn && projectModal) {
+        closeBtn.addEventListener('click', function() {
+            projectModal.style.display = 'none'; // Hide the modal
+        });
+
+        // Close modal when clicking outside of it
+        window.addEventListener('click', function(event) {
+            if (event.target === projectModal) {
+                projectModal.style.display = 'none';
+            }
+        });
+    }
+});
+
+        
+
+        function populateModal(project) {
+            // ... populate title, description, etc.
+            document.getElementById('modalImage').src = project.mainImage;
+
+            const thumbnailsContainer = document.querySelector('.modal-thumbnails');
+            thumbnailsContainer.innerHTML = ''; // Clear previous thumbnails
+
+            project.thumbnails.forEach(thumbSrc => {
+                const img = document.createElement('img');
+                img.src = thumbSrc;
+                img.alt = "Project Thumbnail";
+                img.classList.add('thumbnail-item');
+                thumbnailsContainer.appendChild(img);
+            });
+
+            // ... (Your existing event listener will handle clicks on these newly created images)
+        }
+
+        // Call populateModal(projectData) when you open your modal
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 </body>
 
 <!-- Lightbox Overlay -->
 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
   <img id="lightbox-img" alt="Certificate">
+</div>
+
+</html>
+</div>
+
+</html>
+<!-- Lightbox Overlay -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" alt="Certificate">
+</div>
+
+</html>
 </div>
 
 </html>
