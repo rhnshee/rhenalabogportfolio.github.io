@@ -338,13 +338,23 @@ body {
 }
 
 .hero-img-container {
-    width: 500px;
-    height: 500px;
-    border-radius: none;
-    overflow: hidden;
-    border: 6px solid #ffffff; /* White border around image */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    transition: transform 0.4s ease-in-out;
+    perspective: 1500px;
+    position: relative;
+    width: 320px;
+    height: 320px;
+    margin: 0 auto 40px;
+}
+
+.picture-3d-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(50px);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 0 8px rgba(255,255,255,0.2),
+              0 25px 50px -12px rgba(0, 0, 0, 0.3);
 }
 
 .hero-img-container:hover {
@@ -356,6 +366,171 @@ body {
     height: 100%;
     object-fit: cover;
     display: block;
+    transform: translateZ(60px);
+    filter: drop-shadow(0 0 10px rgba(0,0,0,0.3));
+    transition: all 0.5s ease;
+}
+
+.picture-reflection {
+  position: absolute;
+  bottom: -50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, 
+              rgba(255,255,255,0.3) 0%, 
+              rgba(255,255,255,0) 50%);
+  transform: rotateX(90deg) translateZ(-50px) scaleY(0.5);
+  transform-origin: bottom center;
+  opacity: 0.7;
+  mix-blend-mode: overlay;
+}
+
+.picture-highlight {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, 
+              rgba(255,255,255,0.8) 0%, 
+              rgba(255,255,255,0) 70%);
+  transform: translateZ(80px);
+  mix-blend-mode: overlay;
+  opacity: 0.5;
+}
+
+.picture-shadow {
+  position: absolute;
+  bottom: -20px;
+  left: 10%;
+  width: 80%;
+  height: 40px;
+  background: radial-gradient(ellipse at center, 
+              rgba(0,0,0,0.4) 0%, 
+              rgba(0,0,0,0) 70%);
+  filter: blur(10px);
+  transform: rotateX(-90deg) translateZ(-30px);
+  transform-origin: bottom center;
+  opacity: 0.5;
+  transition: all 0.5s ease;
+}
+
+/* 3D Tilt Effect on Mouse Move */
+.hero-content:hover .picture-3d-frame {
+  transform: rotateX(5deg) rotateY(5deg) rotateZ(-1deg);
+}
+
+.hero-content:hover .picture-shadow {
+  transform: rotateX(-90deg) translateZ(-30px) scale(1.1);
+  opacity: 0.7;
+}
+
+.hero-content:hover .hero-img {
+  transform: translateZ(70px);
+  filter: drop-shadow(0 0 15px rgba(0,191,255,0.5));
+}
+
+/* Add particle effects around the picture */
+.hero-img-container::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: 
+    radial-gradient(circle at 30% 30%, rgba(0,191,255,0.1) 0%, transparent 25%),
+    radial-gradient(circle at 70% 70%, rgba(30,144,255,0.1) 0%, transparent 25%);
+  z-index: -1;
+  border-radius: 25px;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+/* Add these small floating dots */
+.picture-dots {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.picture-dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgba(0,191,255,0.6);
+  border-radius: 50%;
+  filter: blur(1px);
+  animation: floatDot 4s infinite ease-in-out;
+}
+
+@keyframes floatDot {
+  0%, 100% { transform: translate(0, 0); opacity: 0.6; }
+  50% { transform: translate(10px, -10px); opacity: 1; }
+}
+
+/* Add this for a subtle glow effect */
+.hero-img-container::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border-radius: 25px;
+  background: radial-gradient(circle at center, 
+              rgba(0,191,255,0.2) 0%, 
+              rgba(0,191,255,0) 70%);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.hero-img-container:hover::after {
+  opacity: 1;
+}
+
+/* Add a border animation */
+.picture-3d-inner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  background: linear-gradient(135deg, 
+              rgba(0,191,255,0.8), 
+              rgba(30,144,255,0.8)) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, 
+                linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.hero-img-container:hover .picture-3d-inner::before {
+  opacity: 1;
+  animation: borderGlow 2s linear infinite;
+}
+
+@keyframes borderGlow {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
 }
 
 .hero-text {
@@ -479,6 +654,37 @@ body {
     .hero-content {
         gap: 30px;
     }
+}
+
+/* Responsive adjustments for Hero Image */
+@media (max-width: 768px) {
+  .hero-img-container {
+    width: 250px;
+    height: 250px;
+  }
+  
+  /* Reduce 3D effect on mobile */
+  .picture-3d-frame {
+    transform: none !important;
+  }
+  
+  .hero-img {
+    transform: translateZ(0) !important;
+  }
+  
+  /* Hide some effects on mobile */
+  .picture-reflection,
+  .picture-highlight,
+  .hero-img-container::after {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-img-container {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 /* About Section */
