@@ -1403,11 +1403,6 @@
             modalImage.src = assets.main;
             modalLink.href = link;
 
-            // Add click handler for fullscreen view
-            document.querySelector('.modal-image-content').onclick = () => {
-                toggleFullscreen(modalImage.src);
-            };
-
             // Create tech tags dynamically
             modalTechContainer.innerHTML = '';
             tech.forEach(tag => {
