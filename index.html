@@ -53,10 +53,9 @@
             border-radius: 10px;
             overflow: hidden;
             aspect-ratio: 16/9;
-            background: #000;
+            background: var(--bg-secondary, #f8f9fa);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             position: relative;
-            cursor: pointer;
         }
 
         .modal-image-content img {
@@ -78,14 +77,6 @@
             transition: background 0.3s ease;
             z-index: 1;
             pointer-events: none;
-        }
-
-        .modal-image-content:hover::before {
-            background: rgba(0, 0, 0, 0.2);
-        }
-
-        .modal-image-content:hover img {
-            transform: scale(1.02);
         }
 
         .modal-thumbnails {
@@ -515,146 +506,156 @@
                 </div>
             </div>
 
-            <!-- Tools & Technologies Section -->
-            <div class="tech-stack-container">
-                <h3 class="tech-stack-title" data-aos="fade-down">
-                    <span class="title-decorator"></span>
-                    Tools & Technologies
-                    <span class="title-decorator"></span>
-                </h3>
+            <!-- Tools & Technologies Carousel -->
+            <!-- Compact Tools Carousel -->
+            <div class="compact-tech-container">
+            <h3 class="compact-tech-title" data-aos="fade-down">
+                <span class="title-decorator"></span>
+                Tools & Technologies
+                <span class="title-decorator"></span>
+            </h3>
+            
+            <div class="compact-tech-wrapper">
+                <button class="compact-carousel-btn prev-btn" aria-label="Previous">
+                <svg viewBox="0 0 24 24">
+                    <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/>
+                </svg>
+                </button>
                 
-                <div class="tech-stack-grid" data-aos="fade-up" data-aos-delay="300">
-                    <div class="tech-item" data-tech="HTML">
-                        <div class="tech-logo">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
-                        </div>
-                        <div class="tech-progress">
-                            <div class="progress-bar" style="width: 95%"></div>
-                        </div>
-                        <span class="tech-name">HTML5</span>
-                        <span class="tech-percent">95%</span>
+                <div class="compact-tech-carousel" data-aos="fade-up" data-aos-delay="300">
+                <div class="compact-tech-track">
+                    <!-- HTML -->
+                    <div class="compact-tech-card" data-tech="HTML">
+                    <div class="compact-tech-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+                    </div>
+                    <span class="compact-tech-name">HTML5</span>
                     </div>
                     
-                    <div class="tech-item" data-tech="CSS">
-                        <div class="tech-logo">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
-                        </div>
-                        <div class="tech-progress">
-                            <div class="progress-bar" style="width: 90%"></div>
-                        </div>
-                        <span class="tech-name">CSS3</span>
-                        <span class="tech-percent">90%</span>
+                    <!-- CSS -->
+                    <div class="compact-tech-card" data-tech="CSS">
+                    <div class="compact-tech-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+                    </div>
+                    <span class="compact-tech-name">CSS3</span>
                     </div>
                     
-                    <div class="tech-item" data-tech="JavaScript">
-                        <div class="tech-logo">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
-                        </div>
-                        <div class="tech-progress">
-                            <div class="progress-bar" style="width: 85%"></div>
-                        </div>
-                        <span class="tech-name">JavaScript</span>
-                        <span class="tech-percent">85%</span>
+                    <!-- JavaScript -->
+                    <div class="compact-tech-card" data-tech="JavaScript">
+                    <div class="compact-tech-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                    </div>
+                    <span class="compact-tech-name">JavaScript</span>
                     </div>
                     
-                    <div class="tech-item" data-tech="PHP">
-                        <div class="tech-logo">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
-                        </div>
-                        <div class="tech-progress">
-                            <div class="progress-bar" style="width: 80%"></div>
-                        </div>
-                        <span class="tech-name">PHP</span>
-                        <span class="tech-percent">80%</span>
+                    <!-- PHP -->
+                    <div class="compact-tech-card" data-tech="PHP">
+                    <div class="compact-tech-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
+                    </div>
+                    <span class="compact-tech-name">PHP</span>
                     </div>
                     
-                    <div class="tech-item" data-tech="MySQL">
-                        <div class="tech-logo">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
-                        </div>
-                        <div class="tech-progress">
-                            <div class="progress-bar" style="width: 75%"></div>
-                        </div>
-                        <span class="tech-name">MySQL</span>
-                        <span class="tech-percent">75%</span>
+                    <!-- MySQL -->
+                    <div class="compact-tech-card" data-tech="MySQL">
+                    <div class="compact-tech-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+                    </div>
+                    <span class="compact-tech-name">MySQL</span>
                     </div>
                     
-                    <div class="tech-item" data-tech="Bootstrap">
-                        <div class="tech-logo">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
-                        </div>
-                        <div class="tech-progress">
-                            <div class="progress-bar" style="width: 85%"></div>
-                        </div>
-                        <span class="tech-name">Bootstrap</span>
-                        <span class="tech-percent">85%</span>
+                    <!-- Bootstrap -->
+                    <div class="compact-tech-card" data-tech="Bootstrap">
+                    <div class="compact-tech-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
                     </div>
-
-                    <div class="tech-item" data-tech="Figma">
-                        <div class="tech-logo">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
-                        </div>
-                        <div class="tech-progress">
-                            <div class="progress-bar" style="width: 85%"></div>
-                        </div>
-                        <span class="tech-name">Figma</span>
-                        <span class="tech-percent">85%</span>
+                    <span class="compact-tech-name">Bootstrap</span>
                     </div>
-
-                    <div class="tech-item" data-tech="Git/GitHub">
-                        <div class="tech-logo">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="Git/GitHub">
-                        </div>
-                        <div class="tech-progress">
-                            <div class="progress-bar" style="width: 85%"></div>
-                        </div>
-                        <span class="tech-name">Git/GitHub</span>
-                        <span class="tech-percent">85%</span>
+                    
+                    <!-- Figma -->
+                    <div class="compact-tech-card" data-tech="Figma">
+                    <div class="compact-tech-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
                     </div>
-
-                    <div class="tech-item" data-tech="Miro">
-                        <div class="tech-logo">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/miro/miro-original.svg" alt="Miro">
-                        </div>
-                        <div class="tech-progress">
-                            <div class="progress-bar" style="width: 85%"></div>
-                        </div>
-                        <span class="tech-name">Miro</span>
-                        <span class="tech-percent">85%</span>
+                    <span class="compact-tech-name">Figma</span>
                     </div>
-
-                    <div class="tech-item" data-tech="WebFlow">
-                        <div class="tech-logo">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webflow/webflow-original.svg" alt="WebFlow">
-                        </div>
-                        <div class="tech-progress">
-                            <div class="progress-bar" style="width: 85%"></div>
-                        </div>
-                        <span class="tech-name">WebFlow</span>
-                        <span class="tech-percent">85%</span>
+                    
+                    <!-- Git/GitHub -->
+                    <div class="compact-tech-card" data-tech="Git/GitHub">
+                    <div class="compact-tech-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="Git/GitHub">
+                    </div>
+                    <span class="compact-tech-name">GitHub</span>
+                    </div>
+                    
+                    <!-- Miro -->
+                    <div class="compact-tech-card" data-tech="Miro">
+                    <div class="compact-tech-logo">
+                        <img src="assets/icons/miro.svg" alt="Miro">
+                    </div>
+                    <span class="compact-tech-name">Miro</span>
+                    </div>
+                    
+                    <!-- WebFlow -->
+                    <div class="compact-tech-card" data-tech="WebFlow">
+                    <div class="compact-tech-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webflow/webflow-original.svg" alt="WebFlow">
+                    </div>
+                    <span class="compact-tech-name">WebFlow</span>
+                    </div>
+                    
+                    <!-- Canva -->
+                    <div class="compact-tech-card" data-tech="Canva">
+                    <div class="compact-tech-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" alt="Canva">
+                    </div>
+                    <span class="compact-tech-name">Canva</span>
+                    </div>
+                    
+                    <!-- Vercel -->
+                    <div class="compact-tech-card" data-tech="Vercel">
+                    <div class="compact-tech-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" alt="Vercel">
+                    </div>
+                    <span class="compact-tech-name">Vercel</span>
+                    </div>
+                    
+                    <!-- Wix -->
+                    <div class="compact-tech-card" data-tech="Wix">
+                    <div class="compact-tech-logo">
+                        <img src="assets/icons/wix.svg" alt="Wix">
+                    </div>
+                    <span class="compact-tech-name">Wix</span>
+                    </div>
+                    
+                    <!-- FigJam -->
+                    <div class="compact-tech-card" data-tech="FigJam">
+                    <div class="compact-tech-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="FigJam">
+                    </div>
+                    <span class="compact-tech-name">FigJam</span>
+                    </div>
+                    
+                    <!-- WordPress -->
+                    <div class="compact-tech-card" data-tech="WordPress">
+                    <div class="compact-tech-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" alt="WordPress">
+                    </div>
+                    <span class="compact-tech-name">WordPress</span>
                     </div>
                 </div>
-                
-                <div class="tech-stack-footer">
-                    <div class="tech-legend">
-                    <div class="legend-item">
-                        <span class="legend-color beginner"></span>
-                        <span>Beginner</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-color intermediate"></span>
-                        <span>Intermediate</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-color advanced"></span>
-                        <span>Advanced</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-color expert"></span>
-                        <span>Expert</span>
-                    </div>
-                    </div>
                 </div>
+                
+                <button class="compact-carousel-btn next-btn" aria-label="Next">
+                <svg viewBox="0 0 24 24">
+                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                </svg>
+                </button>
+            </div>
+            
+            <div class="compact-carousel-dots">
+                <!-- Dots will be added by JavaScript -->
+            </div>
             </div>
 
             <!-- Stats & Timeline Container -->
@@ -786,7 +787,7 @@
                             data-tech="PHP, MySQL, Bootstrap, JavaScript, HTML, CSS"
                             data-link="https://core3.paradisehoteltomasmorato.com/">
                             <div class="project-slide-image" onclick="openModal(this.closest('.project-trigger'))">
-                                <img src="images/mock-up-previewed.png" alt="Hotel System Mockup">
+                                <img src="images/hotel-system-screenshot.png" alt="Hotel System Mockup">
                                 <div class="image-overlay">
                                     <span class="view-project">View Project</span>
                                 </div>
@@ -1777,46 +1778,119 @@
     document.addEventListener('DOMContentLoaded', createFloatingDots);
 
 
-    // Script to animate tech progress bars on scroll
+    // Script for the tech carousel in tools and technologies section
     document.addEventListener('DOMContentLoaded', function() {
-        // Animate progress bars on scroll into view
-        const techItems = document.querySelectorAll('.tech-item');
-        
-        const animateOnScroll = function() {
-            techItems.forEach(item => {
-            const itemPosition = item.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
-            
-            if (itemPosition < windowHeight - 100) {
-                const progressBar = item.querySelector('.progress-bar');
-                const targetWidth = progressBar.style.width;
-                progressBar.style.width = '0';
-                
-                setTimeout(() => {
-                progressBar.style.width = targetWidth;
-                }, 100);
+        const carousel = document.querySelector('.compact-tech-carousel');
+        const track = document.querySelector('.compact-tech-track');
+        const cards = document.querySelectorAll('.compact-tech-card');
+        const prevBtn = document.querySelector('.compact-carousel-btn.prev-btn');
+        const nextBtn = document.querySelector('.compact-carousel-btn.next-btn');
+        const dotsContainer = document.querySelector('.compact-carousel-dots');
+
+        if (!carousel || !track || cards.length === 0) return;
+
+        let cardWidth, visibleCards, dotCount, dots;
+        let currentIndex = 0;
+
+        function recalc() {
+            cardWidth = cards[0].offsetWidth + parseInt(getComputedStyle(cards[0]).marginRight);
+            visibleCards = Math.max(1, Math.floor(carousel.offsetWidth / cardWidth));
+            dotCount = Math.ceil(cards.length / visibleCards);
+        }
+
+
+        function goToSlide(slideIndex) {
+            // Calculate the max starting index so the last card is always visible
+            const maxIndex = Math.max(0, cards.length - visibleCards);
+            currentIndex = slideIndex * visibleCards;
+            if (currentIndex > maxIndex) {
+                currentIndex = maxIndex;
             }
+            updateCarousel();
+        }
+
+        function createDots() {
+            dotsContainer.innerHTML = '';
+            for (let i = 0; i < dotCount; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('compact-dot');
+                if (i === Math.floor(currentIndex / visibleCards)) dot.classList.add('active');
+                dot.addEventListener('click', function() { goToSlide(i); });
+                dotsContainer.appendChild(dot);
+            }
+            dots = dotsContainer.querySelectorAll('.compact-dot');
+        }
+
+        function updateCarousel() {
+            // Calculate the max starting index so the last card is always visible
+            const maxIndex = Math.max(0, cards.length - visibleCards);
+            // Clamp currentIndex
+            if (currentIndex > maxIndex) currentIndex = maxIndex;
+            if (currentIndex < 0) currentIndex = 0;
+            // If there are fewer cards than visibleCards, don't scroll
+            let offset = 0;
+            if (cards.length > visibleCards) {
+                offset = -currentIndex * cardWidth;
+            }
+            track.style.transform = `translateX(${offset}px)`;
+
+            // Update active dot
+            const activeDotIndex = Math.floor(currentIndex / visibleCards);
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === activeDotIndex);
             });
-        };
-        
-        window.addEventListener('scroll', animateOnScroll);
-        animateOnScroll(); // Run once on load
-        
-        // Add click effect to tech items
-        techItems.forEach(item => {
-            item.addEventListener('click', function() {
-            this.style.transform = 'translateY(-10px) scale(1.05)';
-            setTimeout(() => {
-                this.style.transform = 'translateY(-10px)';
-            }, 300);
-            });
+
+            // Disable buttons at boundaries
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex >= maxIndex;
+        }
+
+        function nextSlide() {
+            const maxIndex = Math.max(0, cards.length - visibleCards);
+            if (currentIndex < maxIndex) {
+                currentIndex += visibleCards;
+                if (currentIndex > maxIndex) {
+                    currentIndex = maxIndex;
+                }
+                updateCarousel();
+            }
+        }
+
+        function prevSlide() {
+            if (currentIndex > 0) {
+                currentIndex -= visibleCards;
+                if (currentIndex < 0) {
+                    currentIndex = 0;
+                }
+                updateCarousel();
+            }
+        }
+
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
         });
-        
-        // Add floating animation to tech logos
-        const techLogos = document.querySelectorAll('.tech-logo');
-        techLogos.forEach(logo => {
-            logo.style.animation = `floatLogo ${3 + Math.random() * 2}s ease-in-out infinite`;
-        });
+
+        function handleResize() {
+            recalc();
+            createDots();
+            // Clamp currentIndex to valid range
+            const maxIndex = Math.max(0, cards.length - visibleCards);
+            if (currentIndex > maxIndex) {
+                currentIndex = maxIndex;
+            }
+            updateCarousel();
+        }
+
+        // Initial setup
+        recalc();
+        createDots();
+        updateCarousel();
+
+        window.addEventListener('resize', handleResize);
     });
 
 
