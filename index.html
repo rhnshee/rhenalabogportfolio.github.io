@@ -1956,15 +1956,18 @@
             });
         }, { threshold: 0.5 });
 
+        function fallbackTrigger() {
+            if (!statsAnimated && achievementsContainer && isInViewport(achievementsContainer)) {
+                animateStats();
+                animateTimeline();
+            }
+        }
+
         if (achievementsContainer) {
             observer.observe(achievementsContainer);
-            // Fallback: if already in view on load (e.g. mobile), trigger after short delay
-            setTimeout(() => {
-                if (!statsAnimated && isInViewport(achievementsContainer)) {
-                    animateStats();
-                    animateTimeline();
-                }
-            }, 500);
+            // Fallback: if already in view on load (e.g. mobile), trigger after a longer delay
+            setTimeout(fallbackTrigger, 900);
+            window.addEventListener('load', () => setTimeout(fallbackTrigger, 900));
         }
 
         // Add hover effect to timeline events
