@@ -409,17 +409,16 @@
                             <span class="sr-only">Open main menu</span>
                             <svg class="menu-icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
                         </button>
-                        <div class="mobile-menu-panel" id="mobile-menu">
-                            <a href="#about" class="mobile-nav-item">About</a>
-                            <a href="#projects" class="mobile-nav-item">Projects</a>
-                            <a href="#certifications" class="mobile-nav-item">Certifications</a>
-                            <a href="#contact" class="mobile-nav-item">Contact</a>
-                        </div>
                     </div>
                 </nav>
             </div>
         </div>
-        
+        <div class="mobile-menu-panel" id="mobile-menu">
+            <a href="#about" class="mobile-nav-item">About</a>
+            <a href="#projects" class="mobile-nav-item">Projects</a>
+            <a href="#certifications" class="mobile-nav-item">Certifications</a>
+            <a href="#contact" class="mobile-nav-item">Contact</a>
+        </div>
     </header>
 
     <!-- Hero Section -->
@@ -919,6 +918,22 @@
     </script>
 
     <script>
+    // Mobile menu toggle functionality
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenuPanel = document.getElementById('mobile-menu');
+    const mobileNavItems = document.querySelectorAll('#mobile-menu .mobile-nav-item');
+
+    mobileMenuButton.addEventListener('click', function() {
+        mobileMenuPanel.classList.toggle('open');
+    });
+
+    // Close menu when a nav item is clicked
+    mobileNavItems.forEach(function(item) {
+        item.addEventListener('click', function() {
+            mobileMenuPanel.classList.remove('open');
+        });
+    });
+
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -979,19 +994,20 @@
         }
 
     //Mobile Menu
-    document.addEventListener('DOMContentLoaded', function () {
+     document.addEventListener('DOMContentLoaded', function () {
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
         mobileMenuButton.addEventListener('click', function () {
-        mobileMenu.classList.toggle('open');
+            mobileMenu.classList.toggle('open');
         });
 
+        // Optional: Close menu when a link is clicked
         const mobileNavItems = mobileMenu.querySelectorAll('.mobile-nav-item');
         mobileNavItems.forEach(item => {
-        item.addEventListener('click', () => {
-            mobileMenu.classList.remove('open');
-        });
+            item.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+            });
         });
     });
     </script>
