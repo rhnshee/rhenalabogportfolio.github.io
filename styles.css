@@ -8,7 +8,25 @@
 }
 
 section {
-    padding: 100px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0,191,255,0.05), rgba(30,144,255,0.05));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+section.in-view::before {
+  opacity: 1;
 }
 
 .section-title {
@@ -30,11 +48,17 @@ section {
 }
 
 .highlight {
-  color: #00bfff; /* Light blue highlight color */
-  background: linear-gradient(to right, #00bfff, #1e90ff);
+  background: linear-gradient(90deg, #00bfff, #1e90ff, #00bfff);
+  background-size: 200% auto;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
-  position: relative;
+  animation: gradientText 3s linear infinite;
+}
+
+@keyframes gradientText {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
 }
 
 .section-description {
@@ -224,6 +248,61 @@ body {
 
 
 /* Hero section */
+/* Add to styles.css */
+.hero-3d-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.floating-shapes {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(145deg, rgba(0,191,255,0.3), rgba(30,144,255,0.3));
+  filter: blur(30px);
+  transition: transform 0.5s ease-out;
+}
+
+.shape-1 {
+  width: 300px;
+  height: 300px;
+  top: 20%;
+  left: 10%;
+}
+
+.shape-2 {
+  width: 200px;
+  height: 200px;
+  bottom: 15%;
+  right: 15%;
+}
+
+.shape-3 {
+  width: 150px;
+  height: 150px;
+  top: 50%;
+  right: 25%;
+}
+
+#hero-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
 .hero {
     min-height: 100vh; /* Full viewport height */
     display: flex;
@@ -400,6 +479,29 @@ body {
 }
 
 /* About Section */
+/* Add to styles.css */
+.skills-3d-container {
+  width: 100%;
+  height: 400px;
+  margin: 50px 0;
+  position: relative;
+  perspective: 1000px;
+}
+
+.skill-sphere {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotateSphere 20s infinite linear;
+}
+
+@keyframes rotateSphere {
+  0% { transform: rotateY(0deg) rotateX(20deg); }
+  100% { transform: rotateY(360deg) rotateX(20deg); }
+}
+
 .about {
     background-color: #f8f9fa; /* Consistent light background */
     padding: 100px 0;
@@ -1159,15 +1261,33 @@ body.modal-open {
 
 /* Optionally, ensure the card fills the slide */
 .project-slide-card {
-    width: 100%;
-    max-width: 320px;
-    background: #fff;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+  transform-style: preserve-3d;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  perspective: 1000px;
+  position: relative;
+}
+
+.project-slide-card:hover {
+  transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2);
+}
+
+.project-slide-card::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 5%;
+  width: 90%;
+  height: 30px;
+  background: rgba(0, 0, 0, 0.1);
+  filter: blur(15px);
+  transform: rotateX(80deg) translateZ(-20px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-slide-card:hover::after {
+  opacity: 1;
 }
 
 .project-slide-image {
@@ -1308,8 +1428,8 @@ body.modal-open {
 }
 
 .modal-content {
-    background-color: #1a1a1a;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #1a1a1a;
     margin: auto;
     padding: 40px;
     border-radius: 10px;
@@ -1441,9 +1561,8 @@ body.modal-open {
 
 /*Certification Section*/
 .certifications {
-    background-color: #f8f9fa; /* Consistent light background */
-    padding: 100px 0;
-    color: #333;
+  position: relative;
+  overflow: hidden;
 }
 
 .certifications .container {
@@ -1460,6 +1579,19 @@ body.modal-open {
     text-align: center;
     position: relative;
     display: inline-block;
+}
+
+.certifications::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(0,191,255,0.1) 0%, transparent 25%),
+    radial-gradient(circle at 80% 70%, rgba(30,144,255,0.1) 0%, transparent 25%);
+  z-index: -1;
 }
 
 .certifications .section-title::after {
@@ -1980,3 +2112,89 @@ footer::before {
   transform: translateY(0);
 }
 
+/* Floating Action */
+.fab-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+}
+
+.fab-main {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00bfff, #1e90ff);
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(0, 191, 255, 0.4);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.fab-main:hover {
+  transform: scale(1.1) rotate(45deg);
+  box-shadow: 0 8px 25px rgba(0, 191, 255, 0.6);
+}
+
+.fab-options {
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.fab-container:hover .fab-options {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.fab-option {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: white;
+  color: #2c3e50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  text-decoration: none;
+}
+
+.fab-option:hover {
+  transform: scale(1.1) translateX(-5px);
+  color: #00bfff;
+}
+
+.fab-option::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  right: 60px;
+  background: #2c3e50;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.fab-option:hover::after {
+  opacity: 1;
+}
