@@ -212,13 +212,16 @@ body {
 
 /* Mobile Menu Panel */
 .mobile-menu-panel {
-    display: none; /* Hidden by default */
-    background-color: #ffffff; /* White background for mobile menu */
+    display: none;
+    background-color: #ffffff;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
     position: absolute;
+    top: 100%; /* Position it right below the header */
+    left: 0;
     width: 100%;
-    z-index: 999; /* Below the main header */
+    z-index: 999;
     padding-bottom: 10px;
+    transition: all 0.3s ease-in-out;
 }
 
 .mobile-menu-panel.open { /* Class toggled by JavaScript */
@@ -1713,7 +1716,7 @@ body.modal-open {
         grid-template-columns: 1fr; /* Single column on very small screens */
     }
     .cert-img-card img {
-        height: 180px;
+        height: 200px;
     }
     .cert-overlay h3 {
         font-size: 1rem;
