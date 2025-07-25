@@ -86,6 +86,7 @@ body {
     top: 0;
     width: 100%;
     z-index: 1000; /* Ensure it stays on top */
+    position: relative; /* Relative positioning for child absolute elements */
 }
 
 .header-container {
