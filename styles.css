@@ -840,10 +840,19 @@ body {
 }
 
 .compact-tech-track {
-  display: flex;
-  gap: 15px;
-  transition: transform 0.5s ease;
-  padding: 5px;
+    display: flex;
+    gap: 15px;
+    transition: transform 0.5s ease;
+    padding: 5px;
+    min-width: max-content;
+    width: auto;
+}
+
+.compact-tech-track .compact-tech-card {
+  margin-right: 15px;
+}
+.compact-tech-track .compact-tech-card:last-child {
+  margin-right: 0;
 }
 
 .compact-tech-card {
