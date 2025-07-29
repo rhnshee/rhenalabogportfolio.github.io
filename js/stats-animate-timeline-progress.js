@@ -58,7 +58,13 @@
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.5 });
+        }, { threshold: 0.2 }); // was 0.5
+
+        // Fallback for when the achievements container is already in view
+        window.addEventListener('load', () => {
+            setTimeout(fallbackTrigger, 1000); // slightly longer delay
+        });
+
 
         function fallbackTrigger() {
             if (!statsAnimated && achievementsContainer && isInViewport(achievementsContainer)) {
