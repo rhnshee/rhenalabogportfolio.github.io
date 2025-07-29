@@ -60,12 +60,6 @@
             });
         }, { threshold: 0.2 }); // was 0.5
 
-        // Fallback for when the achievements container is already in view
-        window.addEventListener('load', () => {
-            setTimeout(fallbackTrigger, 1000); // slightly longer delay
-        });
-
-
         function fallbackTrigger() {
             if (!statsAnimated && achievementsContainer && isInViewport(achievementsContainer)) {
                 animateStats();
@@ -77,7 +71,9 @@
             observer.observe(achievementsContainer);
             // Fallback: if already in view on load (e.g. mobile), trigger after a longer delay
             setTimeout(fallbackTrigger, 900);
-            window.addEventListener('load', () => setTimeout(fallbackTrigger, 900));
+            window.addEventListener('load', () => {
+            setTimeout(fallbackTrigger, 1000); // slightly longer delay
+        });
         }
 
         // Add hover effect to timeline events
