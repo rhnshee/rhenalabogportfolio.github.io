@@ -174,3 +174,22 @@ document.addEventListener('DOMContentLoaded', function() {
         dots[index].classList.add('active');
     }
 });
+
+document.querySelector('.cosmic-circle-container').addEventListener('mousemove', (e) => {
+    const container = e.currentTarget;
+    const rect = container.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    
+    // Tilt effect
+    container.querySelector('.orbit-system').style.transform = `
+        rotateY(${(x - centerX) / 20}deg)
+        rotateX(${(centerY - y) / 20}deg)
+    `;
+    
+    // Dynamic lighting
+    container.querySelector('.atmospheric-glow').style.left = `${(x/rect.width)*100}%`;
+    container.querySelector('.atmospheric-glow').style.top = `${(y/rect.height)*100}%`;
+});
