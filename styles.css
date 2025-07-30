@@ -1122,6 +1122,7 @@ body {
 .timeline-3d-container {
   position: relative;
   padding: 60px 0;
+  margin-top: 40px; /* Add some space above the timeline */
 }
 
 .timeline-title {
@@ -1139,11 +1140,14 @@ body {
 }
 
 .timeline-path {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 0;
+  right: 0;
   height: 4px;
   background: rgba(0, 191, 255, 0.1);
-  position: relative;
-  margin: 60px 0;
-  border-radius: 2px;
+  transform: translateY(-50%); /* Center exactly */
+  z-index: 1;
 }
 
 .timeline-progress {
@@ -1155,9 +1159,10 @@ body {
 }
 
 .timeline-events {
+  position: relative;
   display: flex;
   justify-content: space-between;
-  position: relative;
+  z-index: 2; /* Above the path */
 }
 
 .timeline-event {
@@ -1166,6 +1171,7 @@ body {
   text-align: center;
   transform-style: preserve-3d;
   transition: all 0.5s ease;
+  padding-top: 60px; /* Space for the bubble */
 }
 
 .event-bubble {
@@ -1178,6 +1184,11 @@ body {
   border: 1px solid rgba(0, 191, 255, 0.1);
   max-width: 200px;
   margin: 0 auto;
+  flex-grow: 1; /* Make bubbles grow to fill available space */
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Take full height of parent */
+  min-height: 150px; /* Minimum bubble height */
 }
 
 .timeline-event:hover .event-bubble {
@@ -1200,14 +1211,15 @@ body {
 
 .event-connector {
   position: absolute;
-  bottom: -20px;
+  top: 0;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(-50%);
   width: 15px;
   height: 15px;
   background: #00bfff;
   border-radius: 50%;
   box-shadow: 0 0 0 5px rgba(0, 191, 255, 0.2);
+  z-index: 3;
 }
 
 .timeline-event::before {
@@ -1239,21 +1251,32 @@ body {
   }
   
   .timeline-event {
-    margin-bottom: 60px;
     width: 100%;
+    margin-bottom: 60px;
+    padding-top: 0;
+    padding-left: 60px; /* Space for connector */
+    text-align: left;
   }
   
   .timeline-path {
     display: none;
+    left: 30px; /* Align with mobile connectors */
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    height: auto;
+    transform: none;
   }
   
   .event-bubble {
-    max-width: 300px;
+    max-width: 100%;
+    margin-left: 30px;
   }
   
   .event-connector {
-    bottom: auto;
-    top: -20px;
+    left: 30px;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
   }
 }
 
